@@ -1,0 +1,135 @@
+import { MigrationInterface, QueryRunner } from 'typeorm';
+import { LocaleEntity } from '../../common/entities/locale.entity';
+
+const dataSet = [
+  { title: 'locales.afrikaans', name: 'af' },
+  { title: 'locales.albanian', name: 'sq' },
+  { title: 'locales.amharic', name: 'am' },
+  { title: 'locales.arabic', name: 'ar' },
+  { title: 'locales.armenian', name: 'hy' },
+  { title: 'locales.azerbaijani', name: 'az' },
+  { title: 'locales.basque', name: 'eu' },
+  { title: 'locales.belarusian', name: 'be' },
+  { title: 'locales.bengali', name: 'bn' },
+  { title: 'locales.bosnian', name: 'bs' },
+  { title: 'locales.bulgarian', name: 'bg' },
+  { title: 'locales.catalan', name: 'ca' },
+  { title: 'locales.cebuano', name: 'ceb' },
+  { title: 'locales.chineseSimplified', name: 'zh-CN' },
+  { title: 'locales.chineseTraditional', name: 'zh-TW' },
+  { title: 'locales.corsican', name: 'co' },
+  { title: 'locales.croatian', name: 'hr' },
+  { title: 'locales.czech', name: 'cs' },
+  { title: 'locales.danish', name: 'da' },
+  { title: 'locales.dutch', name: 'nl' },
+  { title: 'locales.english', name: 'en', active: true },
+  { title: 'locales.esperanto', name: 'eo' },
+  { title: 'locales.estonian', name: 'et' },
+  { title: 'locales.finnish', name: 'fi' },
+  { title: 'locales.french', name: 'fr' },
+  { title: 'locales.frisian', name: 'fy' },
+  { title: 'locales.galician', name: 'gl' },
+  { title: 'locales.georgian', name: 'ka' },
+  { title: 'locales.german', name: 'de' },
+  { title: 'locales.greek', name: 'el' },
+  { title: 'locales.gujarati', name: 'gu' },
+  { title: 'locales.haitianCreole', name: 'ht' },
+  { title: 'locales.hausa', name: 'ha' },
+  { title: 'locales.hawaiian', name: 'haw' },
+  { title: 'locales.hebrew', name: 'he' },
+  { title: 'locales.hindi', name: 'hi' },
+  { title: 'locales.hmong', name: 'hmn' },
+  { title: 'locales.hungarian', name: 'hu' },
+  { title: 'locales.icelandic', name: 'is' },
+  { title: 'locales.igbo', name: 'ig' },
+  { title: 'locales.indonesian', name: 'id' },
+  { title: 'locales.irish', name: 'ga' },
+  { title: 'locales.italian', name: 'it' },
+  { title: 'locales.japanese', name: 'ja' },
+  { title: 'locales.javanese', name: 'jv' },
+  { title: 'locales.kannada', name: 'kn' },
+  { title: 'locales.kazakh', name: 'kk' },
+  { title: 'locales.khmer', name: 'km' },
+  { title: 'locales.kinyarwanda', name: 'rw' },
+  { title: 'locales.korean', name: 'ko' },
+  { title: 'locales.kurdish', name: 'ku' },
+  { title: 'locales.kyrgyz', name: 'ky' },
+  { title: 'locales.lao', name: 'lo' },
+  { title: 'locales.latin', name: 'la' },
+  { title: 'locales.latvian', name: 'lv' },
+  { title: 'locales.lithuanian', name: 'lt' },
+  { title: 'locales.luxembourgish', name: 'lb' },
+  { title: 'locales.macedonian', name: 'mk' },
+  { title: 'locales.malagasy', name: 'mg' },
+  { title: 'locales.malay', name: 'ms' },
+  { title: 'locales.malayalam', name: 'ml' },
+  { title: 'locales.maltese', name: 'mt' },
+  { title: 'locales.maori', name: 'mi' },
+  { title: 'locales.marathi', name: 'mr' },
+  { title: 'locales.mongolian', name: 'mn' },
+  { title: 'locales.myanmarBurmese', name: 'my' },
+  { title: 'locales.nepali', name: 'ne' },
+  { title: 'locales.norwegian', name: 'no' },
+  { title: 'locales.nyanjaChichewa', name: 'ny' },
+  { title: 'locales.odiaOriya', name: 'or' },
+  { title: 'locales.pashto', name: 'ps' },
+  { title: 'locales.persian', name: 'fa' },
+  { title: 'locales.polish', name: 'pl' },
+  { title: 'locales.portuguese', name: 'pt' },
+  { title: 'locales.punjabi', name: 'pa' },
+  { title: 'locales.romanian', name: 'ro' },
+  { title: 'locales.russian', name: 'ru' },
+  { title: 'locales.samoan', name: 'sm' },
+  { title: 'locales.scotsGaelic', name: 'gd' },
+  { title: 'locales.serbian', name: 'sr' },
+  { title: 'locales.sesotho', name: 'st' },
+  { title: 'locales.shona', name: 'sn' },
+  { title: 'locales.sindhi', name: 'sd' },
+  { title: 'locales.sinhalaSinhalese', name: 'si' },
+  { title: 'locales.slovak', name: 'sk' },
+  { title: 'locales.slovenian', name: 'sl' },
+  { title: 'locales.somali', name: 'so' },
+  { title: 'locales.spanish', name: 'es' },
+  { title: 'locales.sundanese', name: 'su' },
+  { title: 'locales.swahili', name: 'sw' },
+  { title: 'locales.swedish', name: 'sv' },
+  { title: 'locales.tagalogFilipino', name: 'tl' },
+  { title: 'locales.tajik', name: 'tg' },
+  { title: 'locales.tamil', name: 'ta' },
+  { title: 'locales.tatar', name: 'tt' },
+  { title: 'locales.telugu', name: 'te' },
+  { title: 'locales.thai', name: 'th' },
+  { title: 'locales.turkish', name: 'tr' },
+  { title: 'locales.turkmen', name: 'tk' },
+  { title: 'locales.ukrainian', name: 'uk' },
+  { title: 'locales.urdu', name: 'ur' },
+  { title: 'locales.uyghur', name: 'ug' },
+  { title: 'locales.uzbek', name: 'uz' },
+  { title: 'locales.viettitlese', name: 'vi' },
+  { title: 'locales.welsh', name: 'cy' },
+  { title: 'locales.xhosa', name: 'xh' },
+  { title: 'locales.yiddish', name: 'yi' },
+  { title: 'locales.yoruba', name: 'yo' },
+  { title: 'locales.zulu', name: 'zu' },
+];
+
+export class InsertLocales1707250232178 implements MigrationInterface {
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    const repository = queryRunner.connection.getRepository(LocaleEntity);
+
+    await repository.insert(dataSet);
+  }
+
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    const repository = queryRunner.connection.getRepository(LocaleEntity);
+
+    const names = dataSet.map((d) => d.name);
+
+    await repository
+      .createQueryBuilder()
+      .delete()
+      .from(LocaleEntity)
+      .where('name IN (:...names)', { names })
+      .execute();
+  }
+}

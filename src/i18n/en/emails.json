@@ -1,0 +1,26 @@
+{
+    "welcome": {
+        "subject": "Welcome to {appName}",
+        "p1": "Hi {name}",
+        "p2": "We're thrilled to have you as part of our community. Your journey with us starts here, and we can't wait to help you make the most of it.",
+        "p3": "To confirm your email and unlock all the amazing features, please click on the link below:",
+        "btn": "Verify Email",
+        "p4": "Welcome to {appName}"
+    },
+    "verification": {
+        "subject": "Verify Your Email",
+        "p1": "Hi {name}",
+        "p2": "We noticed you requested another activation link for your Bamboo account. No worries, we're here to help!",
+        "p3": "To activate your account, please click on the link below:",
+        "btn": "Verify Email",
+        "p4": "If you didn't request this email, please disregard this message."
+    },
+    "passwordForget": {
+        "subject": "Reset Your Password",
+        "p1": "Hi {name}",
+        "p2": "We received a request to reset your password for your account.",
+        "p3": "To reset your password, please click the link below:",
+        "btn": "Reset Password",
+        "p4": "If you didn't request this email, please disregard this message."
+    }
+}

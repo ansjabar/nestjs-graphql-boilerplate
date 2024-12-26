@@ -1,0 +1,37 @@
+{
+    "token": {
+        "invalid": "The {type} is invalid",
+        "expired": "The {type} is expired"
+    },
+    "email": {
+        "taken": "Email is already taken. Try another",
+        "notExists": "Email does not exist",
+        "verified": "Email is already verified",
+        "waitToSend": "Please wait for {seconds} seconds to request another email"
+    },
+    "password": {
+        "cannotBeSame": "Old and new passwords cannot be same",
+        "incorrect": "{field} is incorrect"
+    },
+    "user": {
+        "notFound": "User not found"
+    },
+    "locale": {
+        "notAvailable": "Invalid or inactive loclae {locale}"
+    },
+    "auth": {
+        "unauthorized": "Unauthorized",
+        "unauthenticated": "You are not authenticated to perform this action",
+        "invalidCreds": "Provided credentials are incorrect"
+    },
+    "file": {
+        "notFoundOnAssign": "File not found against ID(s) {ids}",
+        "notOwnByYou": "You do not own this file",
+        "alreadyAssigned": "File is already assigned to entity {entity} for type {type}",
+        "mimeConflictOnAssign": "Trying to assign {fromType} type of file to {toType}",
+        "notImage": "File is not an image"
+    },
+    "disk": {
+        "notConfigured": "Disk {disk} is not configured"
+    }
+}

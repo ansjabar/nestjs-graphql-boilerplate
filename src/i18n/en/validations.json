@@ -1,0 +1,69 @@
+{
+    "isEmail": {
+        "single": "{property} must be a valid email",
+        "multiple": "All {property} must be valid emails"
+    },
+    "isBoolean": {
+        "single": "{property} must be boolean",
+        "multiple": "All {property} must be booleans"
+    },
+    "minLength": {
+        "single": "{property} must be atleast {constraint1} characters long",
+        "multiple": "All {property} must be atleast {constraint1} characters long"
+    },
+    "maxLength": {
+        "single": "{property} must be atmost {constraint1} characters long",
+        "multiple": "ALl {property} must be atmost {constraint1} characters long"
+    },
+    "length": {
+        "singleMin": "{property} must be atleast {constraint1} characters long",
+        "multipleMin": "{property} must be atleast {constraint1} characters long",
+        "singleMinMax": "{property} must not be less than {constraint1} characters and more than {constraint2} characters",
+        "multipleMinMax": "All {property} must not be less than {constraint1} characters and more than {constraint2} characters"
+    },
+    "isString": {
+        "single": "{property} must be a string",
+        "multiple": "All {property} must be strings"
+    },
+    "isNotEmpty": {
+        "single": "{property} must not be empty",
+        "multiple": "All {property} must not be empty"
+    },
+    "isOptional": {
+        "single": "{property} is optional",
+        "multiple": "{property} are optional"
+    },
+    "isNumber": {
+        "single": "{property} must be a number",
+        "multiple": "All {property} must be numbers",
+        "singlePositive": "{property} must be a positive number",
+        "multiplePositive": "All {property} must be positive numbers",
+        "singleNegative": "{property} must be a negative number",
+        "multipleNegative": "All {property} must be negative numbers"
+    },
+    "password": "{property} must contain at least one upper case, one lower case, one number, one special character, and minimum 8 characters",
+    "isUUID": {
+        "single": "{property} must be a UUID",
+        "multiple": "All {property} must be UUIDs"
+    },
+    "isArray": {
+        "single": "{property} must be an array",
+        "multiple": "All {property} must be arrays"
+    },
+    "exists": {
+        "single": "{property} does not exist",
+        "multiple": "One or all of {property} does not exist"
+    },
+    "notExists": {
+        "single": "{property} already exists",
+        "multiple": "One or all of {property} already exist"
+    },
+    "isEnum": {
+        "single": "{property} does not exist in allowed values",
+        "multiple": "One or all of {property} do not exist in the allowed values"
+    },
+    "unique": {
+        "single": "{property} must have unique elements",
+        "multiple": "All {property} must have unique elements"
+    }
+}
